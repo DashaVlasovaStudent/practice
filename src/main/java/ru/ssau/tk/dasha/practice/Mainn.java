@@ -1,6 +1,6 @@
 package ru.ssau.tk.dasha.practice;
 
-public class Main {
+public class Mainn {
     public static void main(String[] args) {
         Person person1 = new Person("Ivan", "Ivanov", 227799);
         Person person2 = new Person("Petr", "Petrov");
@@ -46,4 +46,5 @@ class Person{
     }//так как выводятся сразу три параметра, то незаполненные из них будут выводиться как null, если это имя
     //или фамилия(String), и 0, если номер паспорта(int)
 }
+
 
