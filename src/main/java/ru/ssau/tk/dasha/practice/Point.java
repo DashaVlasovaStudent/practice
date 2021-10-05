@@ -10,22 +10,21 @@ public class Point {
         this.y = y;
         this.z = z;
     }
-
-    Point a = new Point(3, 4, 5.9);
-    Point b = new Point(3.8, 7, 9);
-    Point c = new Point(1, 4.5, 5.9);
-
     public double getX() {
-        return a.x;
+        return x;
     }
     public double getY() {
-        return a.y;
+        return y;
     }
     public double getZ() {
-        return a.z;
+        return z;
     }
 
 
+    public double length() {
+        return Math.sqrt(x * x + y * y + z * z);
+
+    }
 
 
 }

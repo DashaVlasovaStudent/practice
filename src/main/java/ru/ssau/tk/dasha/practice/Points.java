@@ -5,11 +5,16 @@ public class Points {
 
     }
 
+
     public Point enlarge(Point a, double x) {
 
         return new Point(x * a.getX(), x * a.getY(), x * a.getZ());
 
     }
+    public static double length(Point x){
+        return x.length();
+    }
+
 
     public static Point sum(Point aa, Point bb) {
         double xSum = aa.x + bb.x;
