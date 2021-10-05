@@ -1,9 +1,16 @@
 package ru.ssau.tk.dasha.practice;
 
 public class Points {
-    private Points(){
+    private Points() {
 
     }
+
+    public Point enlarge(Point a, double x) {
+
+        return new Point(x * a.getX(), x * a.getY(), x * a.getZ());
+
+    }
+
     public static Point sum(Point aa, Point bb) {
         double xSum = aa.x + bb.x;
         double ySum = aa.y + bb.y;
@@ -32,8 +39,6 @@ public class Points {
         double zDivide = aa.z / bb.z;
         return new Point(xDivide, yDivide, zDivide);
     }
-
-
 
 
 }
