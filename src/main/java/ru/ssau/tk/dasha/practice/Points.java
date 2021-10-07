@@ -14,6 +14,18 @@ public class Points {
     public static double length(Point x){
         return x.length();
     }
+    public static Point opposite(Point point){
+        double x = -1* point.getX();
+        double y = -1* point.getY();
+        double z = -1* point.getZ();
+        return new Point (x,y,z);
+    }
+    public static Point inverse(Point point){
+        double x = 1/ point.getX();
+        double y = 1/ point.getY();
+        double z = 1/ point.getZ();
+        return new Point (x,y,z);
+    }
 
 
     public static Point sum(Point aa, Point bb) {
