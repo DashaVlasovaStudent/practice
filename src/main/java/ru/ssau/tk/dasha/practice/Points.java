@@ -11,22 +11,33 @@ public class Points {
         return new Point(x * a.getX(), x * a.getY(), x * a.getZ());
 
     }
-    public static double length(Point x){
+
+    public static double length(Point x) {
         return x.length();
     }
-    public static Point opposite(Point point){
-        double x = -1* point.getX();
-        double y = -1* point.getY();
-        double z = -1* point.getZ();
-        return new Point (x,y,z);
-    }
-    public static Point inverse(Point point){
-        double x = 1/ point.getX();
-        double y = 1/ point.getY();
-        double z = 1/ point.getZ();
-        return new Point (x,y,z);
+
+    public static Point opposite(Point point) {
+        double x = -1 * point.getX();
+        double y = -1 * point.getY();
+        double z = -1 * point.getZ();
+        return new Point(x, y, z);
     }
 
+    public static Point inverse(Point point) {
+        double x = 1 / point.getX();
+        double y = 1 / point.getY();
+        double z = 1 / point.getZ();
+        return new Point(x, y, z);
+    }
+
+    public double scalarProduct(Point point, Point point1) {//радиус-векторы
+        return point.x * point1.x + point.y * point1.y + point.z * point1.z;
+    }
+    public double vectorProduct(Point point, Point point1) {//радиус-векторы
+        double cos = scalarProduct(point, point1)/ (length(point)*length(point1));
+        double sin = Math.sqrt(1-cos*cos);
+        return length(point)*length(point1)*sin;
+    }
 
     public static Point sum(Point aa, Point bb) {
         double xSum = aa.x + bb.x;
