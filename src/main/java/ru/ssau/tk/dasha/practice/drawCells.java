@@ -1,6 +1,6 @@
 package ru.ssau.tk.dasha.practice;
 
-import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.*;
 
 public class drawCells {
     public static void draw(){
@@ -31,4 +31,6 @@ public class drawCells {
         glVertex2f(elem.getX(), elem.getY());
         glEnd();
     }
+
+
 }
