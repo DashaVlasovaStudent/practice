@@ -4,8 +4,9 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
-import static org.lwjgl.opengl.GL11.glMatrixMode;
-import static org.lwjgl.opengl.GL11.glOrtho;
+import java.util.Random;
+
+import static org.lwjgl.opengl.GL11.*;
 
 public class GUI {
     private static void initializeOpenGL(){
@@ -43,8 +44,26 @@ public class GUI {
          * Белый фоновый цвет
          */
         glClearColor(1,1,1,1);
+
+        // состояние клетки
+        getState(x,y){
+            return cells[x][y].getState();
+        }
+
+        setState(x,y,state){
+            cells[x][y].setState(state);
+        }
+        //не работает тк не будет генерироваться еда(state либо 0 либо1)
+        public static void init(){// начальное поле с клетками со случайным состоянием state
+        initializeOpenGL();
+
+        cells = new Cell[CELLS_COUNT_X][CELLS_COUNT_Y];
+
+        Random rnd = new Random();
+
+        for(int i=0; i<CELLS_COUNT_X; i++){
+            for(int j=0; j<CELLS_COUNT_Y; j++){
+                cells[i][j]=new Cell(i*CELL_SIZE, j*CELL_SIZE, (rnd.nextInt(100) < INITIAL_SPAWN_CHANCE?-1:0);
+            }
+        }
     }
-
-
-
-}
