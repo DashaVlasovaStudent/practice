@@ -8,7 +8,9 @@ import java.util.Random;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class GUI {
+public class GUI extends Constants  {
+    public static final int CELL_SIZE = 32;//Размер игровой ячейки
+
     private static void initializeOpenGL(){
         try {
             //Задаём размер будущего окна
@@ -46,7 +48,7 @@ public class GUI {
         glClearColor(1,1,1,1);
 
         // состояние клетки
-        getState(x,y){
+        getState( x, y){
             return cells[x][y].getState();
         }
 
