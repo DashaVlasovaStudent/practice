@@ -1,13 +1,13 @@
 package ru.ssau.tk.dasha.practice;
 
-public class Foxes extends Animal{
+public class Foxes extends Animal {
     protected String livePlace;
 
-    public void setLivePlace(String livePlace){
+    public void setLivePlace(String livePlace) {
         this.livePlace = livePlace;
     }
 
-    public String getLivePlace(){
+    public String getLivePlace() {
         return livePlace;
     }
 

@@ -35,12 +35,12 @@ public class Auto {
         this.fullName = fullName;
     }
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
         Auto lada = new Auto();
         lada.setNumber("678");
         lada.setModel("priora");
-        lada.setFullName("Victorov Victor Vicrorovoch" );
+        lada.setFullName("Victorov Victor Vicrorovoch");
 
-        System.out.println(lada.getNumber()+lada.getModel()+lada.getFullName()+count );
+        System.out.println(lada.getNumber() + lada.getModel() + lada.getFullName() + count);
     }
 }
