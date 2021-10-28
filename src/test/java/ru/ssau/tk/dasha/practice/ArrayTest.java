@@ -13,4 +13,6 @@ public class ArrayTest {
 
         assertEquals( array2.newArray(5).length, array1.length);
     }
+
+
 }
