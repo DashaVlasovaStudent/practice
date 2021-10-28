@@ -8,9 +8,15 @@ public class Strings {
         }
     }
 
+    public void method(){
+        String firstStr = "Hello";
+        String secondStr = new String(firstStr);
+        System.out.println(firstStr == secondStr);
+        System.out.println(firstStr.equals(secondStr));
+    }
+
     public static void main(String[] args) {
-        String string = "Hello world";
         Strings str = new Strings();
-        str.stringChar(string);
+        str.method();
     }
 }
