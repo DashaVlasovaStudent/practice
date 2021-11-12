@@ -17,9 +17,19 @@ class Person{
         this.lastName = lastName;
         this.passportld = passportld;
     }
+    public void setNames (String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public void getInformation() {
         System.out.println("Имя: " + firstName + ", фамилия: " + lastName + ", номер паспорта: " + passportld );
+    }
+    public String getFirstName(){
+        return this.firstName;
+    }
+    public String getLastName(){
+        return this.lastName;
     }
     public static void main(String[] args) {
         Person person1 = new Person();
