@@ -1,18 +1,20 @@
 package ru.ssau.tk.dasha.practice.Collections;
 
 public class Location {
-    public Location(){
+    public Location() {
 
     }
+
     private String id;
     private double latitude;
     private double longitude;
 
-    enum SettlementType{
+    enum SettlementType {
         CITY,
         VILLAGE
     }
-    enum WaypointType{
+
+    enum WaypointType {
         DEPOT,
         WAREHOUS,
         EMPTY
