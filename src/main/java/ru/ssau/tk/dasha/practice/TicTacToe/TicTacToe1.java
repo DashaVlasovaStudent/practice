@@ -79,7 +79,7 @@ public class TicTacToe1 extends JComponent {
                     } else if (result == FIELD_X*3){
                         JOptionPane.showMessageDialog(this,"'x' won", "Victory!", JOptionPane.INFORMATION_MESSAGE);
                     }else {
-                        JOptionPane.showMessageDialog(this,"draw (nobody won)", "Victory!", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this,"draw (nobody won)", "Draw", JOptionPane.INFORMATION_MESSAGE);
                     }
                     initGame();
                     repaint();
