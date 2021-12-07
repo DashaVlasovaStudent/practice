@@ -19,13 +19,33 @@ public class Saper {
         int k = 0;
         for (int iX = -1; iX <= 1; iX++) {
             for (int iY = -1; iY <= 1; iY++) {
-                if (isOk(iX + x, iY + y) ){
+                if (isOk(iX + x, iY + y)) {
                     continue;
                 }
                 k += mines[iX + x][iY + y];
             }
         }
         return k;
+    }
+
+    void reveal(int x, int y) {//раскрытие клеточек сапера
+        if (isOk(x, y)) {
+            return;
+        }
+        if (revealed[x][y]) {
+            return;
+        }
+        if (howManyNear(x, y) != 0) {
+            return;
+        }
+        reveal(x - 1, y - 1);
+        reveal(x - 1, y + 1);
+        reveal(x + 1, y - 1);
+        reveal(x - 1, y);
+        reveal(x, y - 1);
+        reveal(x, y + 1);
+        reveal(x + 1, y);
+        reveal(x + 1, y + 1);
     }
 
 }
