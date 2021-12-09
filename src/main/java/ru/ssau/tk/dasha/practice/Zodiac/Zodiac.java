@@ -176,20 +176,30 @@ public class Zodiac {
         String zodiacSign;
         String dayOfWeek;
 
-        System.out.println("Your zodiac sign is ");
-        zodiacSign = scanner.next();
-        ZodiacSigns sign = ZodiacSigns.valueOf(zodiacSign);
+        System.out.println("Your zodiac sign is (USING BIG LETTERS)");
+        try {
+            zodiacSign = scanner.next();
+            ZodiacSigns sign = ZodiacSigns.valueOf(zodiacSign);
 
-        System.out.println("Today is (day of week)");
-        dayOfWeek = scanner.next();
-        DaysOfWeek day = DaysOfWeek.valueOf(dayOfWeek);
+            System.out.println("Today is (day of week USING BIG LETTERS)");
+            dayOfWeek = scanner.next();
+            DaysOfWeek day = DaysOfWeek.valueOf(dayOfWeek);
 
-        Zodiac user = new Zodiac();
+            Zodiac user = new Zodiac();
+            System.out.println("Your horoscope:");
+            user.createHoroscope(sign, day);
 
-        System.out.println("Your horoscope:");
+        } catch(IllegalArgumentException e){
+            System.err.println("Sign or day is entered incorrectly");
+        }
+
+
+
+
+
 
         //System.out.println("You entered:\n zodiac sign is " + sign + "\n Today is (day of week) " + day + "\n\n");
-        user.createHoroscope(sign, day);
+
 
     }
 }
