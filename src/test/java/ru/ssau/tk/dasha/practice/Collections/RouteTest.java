@@ -78,4 +78,20 @@ public class RouteTest {
             Assert.assertEquals(locations.getId(), i++);
         }
     }
+
+    @Test
+    public void testRemove() {
+        List<Location> locations = new ArrayList<>();
+
+        locations.add(location);
+        locations.add(location1);
+        locations.add(location2);
+        Assert.assertEquals(location1, locations.get(1));
+
+        locations.remove(1);
+        Assert.assertEquals(location2, locations.get(1));
+
+
+
+    }
 }
