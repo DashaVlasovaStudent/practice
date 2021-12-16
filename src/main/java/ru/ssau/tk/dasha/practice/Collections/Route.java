@@ -28,5 +28,13 @@ public class Route implements Iterable<Location> {
         this.locations.remove(i);
     }
 
+    public Location getFirstLocation() {
+        return locations.get(0);
+    }
+
+    public Location getLastLocation() {
+        return locations.get(locations.size() - 1);
+    }
+
 
 }

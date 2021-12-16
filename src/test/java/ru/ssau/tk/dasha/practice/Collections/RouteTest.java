@@ -60,4 +60,22 @@ public class RouteTest {
         Assert.assertEquals(route.getLocation(), locations);
 
     }
+
+    @Test
+    public void testIterator(){
+        Route route = new Route();
+        int i = 0;
+
+        route.addLocationAtCurrentIndex(0,location );
+        route.addLocationAtCurrentIndex(1,location1 );
+        route.addLocationAtCurrentIndex(2,location2 );
+
+        location.setId(0);
+        location1.setId(1);
+        location2.setId(2);
+
+        for (Location locations: route){
+            Assert.assertEquals(locations.getId(), i++);
+        }
+    }
 }
