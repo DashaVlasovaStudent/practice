@@ -1,5 +1,7 @@
 package ru.ssau.tk.dasha.practice.Collections;
 
+import java.util.Objects;
+
 public class Location {
     public Location() {
 
@@ -38,5 +40,19 @@ public class Location {
     }
     public double getLongitude (){
         return longitude;
+    }
+
+    @Override
+    public boolean equals (Object object){
+        if (this == object){
+            return  true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id);
     }
 }
