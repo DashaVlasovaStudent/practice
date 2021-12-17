@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.testng.Assert.*;
 
 public class RouteTest {
 
@@ -62,19 +61,19 @@ public class RouteTest {
     }
 
     @Test
-    public void testIterator(){
+    public void testIterator() {
         Route route = new Route();
         int i = 0;
 
-        route.addLocationAtCurrentIndex(0,location );
-        route.addLocationAtCurrentIndex(1,location1 );
-        route.addLocationAtCurrentIndex(2,location2 );
+        route.addLocationAtCurrentIndex(0, location);
+        route.addLocationAtCurrentIndex(1, location1);
+        route.addLocationAtCurrentIndex(2, location2);
 
         location.setId(0);
         location1.setId(1);
         location2.setId(2);
 
-        for (Location locations: route){
+        for (Location locations : route) {
             Assert.assertEquals(locations.getId(), i++);
         }
     }
@@ -92,6 +91,25 @@ public class RouteTest {
         Assert.assertEquals(location2, locations.get(1));
 
 
+    }
 
+    @Test
+    public void testToString() {
+        Settlement settlement = new Settlement();
+        settlement.setType(Location.SettlementType.VILLAGE);
+        settlement.setName("Lublino");
+        settlement.setLatitude(34);
+        settlement.setLongitude(99);
+        settlement.toString();
+
+        Waypoint waypoint = new Waypoint();
+        waypoint.setType(Location.WaypointType.DEPOT);
+        waypoint.setName("some depot");
+        waypoint.setLatitude(44);
+        waypoint.setLongitude(22);
+        waypoint.toString();
+
+        System.out.println(settlement);
+        System.out.println(waypoint);
     }
 }

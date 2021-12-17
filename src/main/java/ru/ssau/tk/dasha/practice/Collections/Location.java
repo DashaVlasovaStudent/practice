@@ -10,6 +10,7 @@ public class Location {
     private int id;
     private double latitude;
     private double longitude;
+    private String name;
 
     enum SettlementType {
         CITY,
@@ -31,6 +32,9 @@ public class Location {
     public void setLongitude(double longitude){
         this.longitude = longitude;
     }
+    public void setName(String name){
+        this.name = name;
+    }
 
     public int getId (){
         return id;
@@ -40,6 +44,9 @@ public class Location {
     }
     public double getLongitude (){
         return longitude;
+    }
+    public String getName(){
+        return name;
     }
 
     @Override
