@@ -112,4 +112,27 @@ public class RouteTest {
         System.out.println(settlement);
         System.out.println(waypoint);
     }
+
+    @Test
+    public void testCompareTo(){
+        Route route1 = new Route();
+        Route route2 = new Route();
+        Route route3 = new Route();
+
+        Settlement city = new Settlement();
+        Waypoint depot = new Waypoint();
+
+        city.setLongitude(3);
+        city.setLatitude(5);
+
+        depot.setLongitude(4);
+        depot.setLatitude(2);
+
+        route1.addLocationAtTheEnd(city);
+        route2.addLocationAtTheEnd(city);
+        route3.addLocationAtTheEnd(city);
+        route3.addLocationAtTheEnd(depot);
+
+        Assert.assertEquals(route1.length(), route2.length());
+    }
 }
