@@ -62,4 +62,10 @@ public class Location {
     public int hashCode(){
         return Objects.hash(id);
     }
+
+    EquatorComparator equatorComparator = new EquatorComparator();
+
+    public int compareTo (Location location){
+        return equatorComparator.compare(this, location);
+    }
 }
