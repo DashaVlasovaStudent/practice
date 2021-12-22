@@ -49,19 +49,15 @@ public class Pizza {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                if (textField.getText() != "MARGARITA" | textField.getText() != "PEPERONI" | textField.getText() != "PIZZAPIE") {
-                    JOptionPane.showMessageDialog(jFrame, "The pizza you've entered isn't there in our menu");
-                } else {
-                    JOptionPane.showMessageDialog(jFrame, "Pizza is made, please take it and give us money\n Bon Apetit!");
-                }
-
                 if (textField.getText().isEmpty()) {
                     JOptionPane.showInputDialog("Enter the name of pizza, please");
-                    if (textField.getText() != "MARGARITA" | textField.getText() != "PEPERONI" | textField.getText() != "PIZZAPIE") {
-                        JOptionPane.showMessageDialog(jFrame, "The pizza you've entered isn't there in our menu");
-                    }
-                } else {
+                }
+
+                if (textField.getText().equalsIgnoreCase("MARGARITA") | textField.getText().equalsIgnoreCase("PEPERONI") //
+                        | textField.getText().equalsIgnoreCase("PIZZAPIE")) {
                     JOptionPane.showMessageDialog(jFrame, "Pizza is made, please take it and give us money\n Bon Apetit!");
+                } else {
+                    JOptionPane.showMessageDialog(jFrame, "The pizza you've entered isn't there in our menu");
                 }
 
 
