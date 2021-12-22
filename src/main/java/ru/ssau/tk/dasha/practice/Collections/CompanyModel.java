@@ -76,5 +76,8 @@ public class CompanyModel {
     public void asssignRoute(Driver driver, Route route) {
         driverRouteMap.put(driver, route);
     }
+    public  static void sort(List<Settlement> settlementsList, Comparator<? super Settlement> comparator){
+        settlementsList.sort(comparator);
+    }
 
 }
