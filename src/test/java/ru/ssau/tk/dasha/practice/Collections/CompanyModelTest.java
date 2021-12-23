@@ -29,8 +29,9 @@ public class CompanyModelTest {
         Assert.assertEquals(companyModel.getDriverRouteMap().get(driver1), route1);
         Assert.assertEquals(companyModel.getDriverRouteMap().get(driver2), route2);
     }
+
     @Test
-    public void testSort(){
+    public void testSort() {
         Settlement settlement1 = new Settlement();
         Settlement settlement2 = new Settlement();
         Settlement settlement3 = new Settlement();
@@ -46,10 +47,26 @@ public class CompanyModelTest {
         settlement3.setLatitude(72687);
         settlement4.setLatitude(2229);
 
-        List<Settlement> settlements = new ArrayList<>(Arrays.asList(settlement1,settlement2,settlement3,settlement4));
+        List<Settlement> settlements = new ArrayList<>(Arrays.asList(settlement1, settlement2, settlement3, settlement4));
         CompanyModel.sort(settlements, new EquatorComparator());
 
         CompanyModel.sort(settlements, Comparator.comparingInt(Location::getId));
-        Assert.assertEquals(settlements, new ArrayList<>(Arrays.asList(settlement4,settlement3,settlement2,settlement1)));
+        Assert.assertEquals(settlements, new ArrayList<>(Arrays.asList(settlement4, settlement3, settlement2, settlement1)));
+    }
+
+    @Test
+    public void testSortByName() {
+        Location loc1 = new Location();
+        Location loc2 = new Location();
+        Location loc3 = new Location();
+
+        loc1.setName("Togliatti");
+        loc2.setName("Saratov");
+        loc3.setName("Lublino");
+
+        List<Location> locations = new ArrayList<>(Arrays.asList(loc1, loc2, loc3));
+        CompanyModel.sortByName(locations);
+        assertEquals(locations, new ArrayList<>(Arrays.asList(loc3, loc2, loc1)));
+
     }
 }
